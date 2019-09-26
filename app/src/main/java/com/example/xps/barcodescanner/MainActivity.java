@@ -42,6 +42,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 import java.lang.reflect.Field;
@@ -80,18 +82,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Spinner spinner;
     String selectedItemText;
     String[] splitDateTime;
-  //  MaterialBetterSpinner materialDesignSpinner;
+
     private static final int RC_BARCODE_CAPTURE = 9001;
     SharePrefService ap;
     private static final String TAG = "BarcodeMain";
     String usernamelogin = "admin";
     String passwordlogin = "*gsm001";
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+
     Retrofit retrofitallpost=new Retrofit.Builder()
             .baseUrl("https://gsmweb.montrealgujarati.com/index.php/Gsmapi/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(SynchronousCallAdapterFactory.create())
             .build();
+
     final OkHttpClient okHttpClient = new OkHttpClient.Builder()
             .connectTimeout(1, TimeUnit.MINUTES) // connect timeout
             .writeTimeout(1, TimeUnit.MINUTES) // write timeout
@@ -324,11 +328,25 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         boolean result = ticketid.isResult();
                         message = ticketid.getMessage();
                         verifyby = ticketid.getVerifyBy();
-                        for (UserDetail userdetail : response.body().getData()) {
+                        if(verifyby.isEmpty())
+                        {
+                            verifyby = "N/A";
+                        }
+                        List<UserDetail> user = response.body().getUserDetail();
+                        if(user.isEmpty())
+                        {
+                            namebook = "N/A";
+                            barcodebook = "N/A";
+                            book = "N/A";
 
-                            namebook = userdetail.getName();
-                            barcodebook = userdetail.getBarcode_id();
-                            book = userdetail.getBooking_id();
+                        }
+                        else {
+                            for (UserDetail userdetail : response.body().getUserDetail()) {
+
+                                namebook = userdetail.getName();
+                                barcodebook = userdetail.getBarcode_id();
+                                book = userdetail.getBooking_id();
+                            }
                         }
 
                         verifytime = ticketid.getVerifyTime();
@@ -379,16 +397,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
         nametxt.setVisibility(View.VISIBLE);
         verifytxt.setVisibility(View.VISIBLE);
 
+            nametxt.setText(namebook);
+            barcodeidtxt.setText(barcodebook);
+            bookingidtxt.setText(book);
+
         duplicatemessage.setText(message);
-        bookingidtxt.setText(book);
-        barcodeidtxt.setText(barcodebook);
-        nametxt.setText(namebook);
         verifytxt.setText(verifyby);
 
         if(verifytime.isEmpty())
         {
-            datetxt.setText("Not Found");
-            timetxt.setText("Not Found");
+            datetxt.setText("N/A");
+            timetxt.setText("N/A");
         }
         else {
             datetxt.setText(splitDateTime[0]);

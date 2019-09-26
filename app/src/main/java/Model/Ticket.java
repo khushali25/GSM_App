@@ -26,21 +26,17 @@ public class Ticket implements Serializable
     private String verifyTime;
 
 
-    public List<UserDetail> getData() {
-        return data;
+    public List<UserDetail> getUserDetail() {
+        return userDetail;
     }
 
-    public void setData(List<UserDetail> data) {
-        this.data = data;
+    public void setUserDetail(List<UserDetail> userDetail) {
+        this.userDetail = userDetail;
     }
 
     @SerializedName("userDetail")
     @Expose
-    private List<UserDetail> data = null;
-
-
-
-
+    private List<UserDetail> userDetail = null;
 
     public int getStatus() {
         return status;
