@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:background="#fff"
+    android:id="@+id/framelayoutfragment"
+    app:ignore="NamespaceTypo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="16dp">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/name_text_input"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+    </android.support.design.widget.TextInputLayout>
+
+
+            <!--<com.weiwangcn.betterspinner.library.BetterSpinner-->
+            <!--android:id="@+id/eventdropdown"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Select Event"-->
+            <!--android:focusable="false"-->
+            <!--android:maxHeight="300dp"-->
+            <!--app:met_textColorHint="@color/colorSpinner"-->
+            <!--android:backgroundTint="@color/colorSpinner"-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:textColorHint="#CB69B793"-->
+            <!--app:met_floatingLabel="normal" />-->
+        <Spinner
+            android:id="@+id/spinnerfirstactivity"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/result"
+            android:visibility="gone"
+            android:layout_below="@id/spinnerfirstactivity"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/colorAccent"
+             />
+
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnsubmit"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#336A86"
+            android:text="Submit"
+            android:textColor="#ffffff"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

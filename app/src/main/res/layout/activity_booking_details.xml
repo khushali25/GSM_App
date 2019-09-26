@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@drawable/gradient"
+    android:weightSum="3"
+    tools:context=".BookingDetailsActivity">
+    <LinearLayout
+        android:layout_weight="0.4"
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:background="@drawable/gradient"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:text="Gujarati Samaj of Montreal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Admin Dashboard"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_weight="2.6"
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        >
+
+
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_weight="2.6"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:layout_weight="2.5"
+                android:elevation="40dp"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.8"
+                    android:orientation="vertical">
+
+                    <ScrollView
+                        android:id="@+id/layout1"
+                        android:layout_height="match_parent"
+                        android:scrollbars="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dip"
+                        android:layout_marginBottom="10dp"
+                        android:scrollbarStyle="outsideInset"
+                        android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+                        <Button
+                            android:id="@+id/scan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:elevation="5dp"
+                            android:translationZ="5dp"
+                            android:stateListAnimator="@null"
+                            android:background="#336A86"
+                            android:text="Scan"
+                            android:textColor="#ffffff" />
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Booking ID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookingIdadmin"
+            android:gravity="left"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/bookingIdtxt"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textSize="13dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Event Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventNamebooking"
+            android:gravity="left"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/eventNametxt"
+            android:text=""
+            android:textSize="13dp"
+            android:gravity="right"
+            android:maxLines="3"
+            android:layout_weight="1"
+            android:lines="3"
+            android:textAlignment="viewStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Number of Tickets"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/noOfTicket"
+            android:gravity="left"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/noOfTickettxt"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textSize="13dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Seats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/seats"
+            android:gravity="left"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/seatstxt"
+            android:text=""
+            android:textSize="13dp"
+            android:gravity="right"
+            android:textAlignment="viewStart"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Booking Time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bookingTime"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/bookingTimetxt"
+            android:text=""
+            android:textSize="13dp"
+            android:gravity="right"
+            android:textAlignment="viewStart"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Transaction Id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/transactionId"
+            android:gravity="left"
+            android:clickable="false"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/transactionIdtxt"
+            android:text=""
+            android:textAlignment="viewStart"
+            android:textSize="13dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Note"
+            android:clickable="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/note"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/notetxt"
+            android:text=""
+            android:textSize="13dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:maxLines="4"
+            android:lines="4"
+            android:textAlignment="viewStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+        <TextView
+            android:text="Payment Type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/paymentType"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="visible"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/paymentTypetxt"
+            android:text=""
+            android:textSize="13dp"
+            android:gravity="right"
+            android:layout_weight="1"
+            android:textAlignment="viewStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/layout"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal|vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="30dp"
+        android:scrollbarStyle="outsideInset"
+        android:fillViewport="true">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalView"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal|vertical"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dip">
+
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1"
+            android:visibility="visible"/>
+
+
+    </HorizontalScrollView>
+</ScrollView>
+                    </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+
+            </android.support.design.card.MaterialCardView>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
